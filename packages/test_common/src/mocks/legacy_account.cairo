@@ -11,11 +11,11 @@ pub trait ILegacyAccount<TState> {
 pub mod LegacyAccountMock {
     use core::num::traits::Zero;
     use openzeppelin_account::utils::is_valid_stark_signature;
+    use starknet::SyscallResultTrait;
     use starknet::account::Call;
     use starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
-    use starknet::SyscallResultTrait;
-    use crate::mocks::observer::ObserverComponent::InternalTrait as ObserverInternalTrait;
     use crate::mocks::observer::ObserverComponent;
+    use crate::mocks::observer::ObserverComponent::InternalTrait as ObserverInternalTrait;
 
     component!(path: ObserverComponent, storage: observer, event: ObserverEvent);
 

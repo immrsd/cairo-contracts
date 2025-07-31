@@ -101,14 +101,18 @@ fn test_meta_tx_v0_context_update() {
     spy.print_all_events();
 
     // Check registered calls
-    assert_external_calls_to(ACCOUNT, array![
-        CallInfo { caller: ZERO, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
-    ]);
-    assert_external_calls_to(COUNTER, array![
-        CallInfo { caller: ACCOUNT, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
-        CallInfo { caller: ACCOUNT, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
-        CallInfo { caller: ACCOUNT, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
-    ]);
+    assert_external_calls_to(
+        ACCOUNT,
+        array![CallInfo { caller: ZERO, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash }],
+    );
+    assert_external_calls_to(
+        COUNTER,
+        array![
+            CallInfo { caller: ACCOUNT, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
+            CallInfo { caller: ACCOUNT, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
+            CallInfo { caller: ACCOUNT, tx_version: TX_VERSION_0, chain_id: CHAIN_ID, tx_hash },
+        ],
+    );
 
     // Check events
     // spy.assert_event_external_call(ACCOUNT, ZERO, TX_VERSION_0, CHAIN_ID, tx_hash);

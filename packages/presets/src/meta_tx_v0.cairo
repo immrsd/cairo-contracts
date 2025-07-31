@@ -3,9 +3,9 @@
 
 #[starknet::contract]
 pub mod MetaTransactionV0 {
-    use crate::interfaces::MetaTransactionV0ABI;
     use starknet::ContractAddress;
     use starknet::syscalls::meta_tx_v0_syscall;
+    use crate::interfaces::MetaTransactionV0ABI;
 
     #[storage]
     struct Storage {}
