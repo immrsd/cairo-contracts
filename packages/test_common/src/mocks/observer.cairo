@@ -19,7 +19,6 @@ pub mod ObserverComponent {
         Map, StorageMapReadAccess, StorageMapWriteAccess, StoragePointerReadAccess,
         StoragePointerWriteAccess,
     };
-    use starknet::{ClassHash, SyscallResultTrait};
     use super::CallInfo;
 
     #[storage]
